@@ -1,0 +1,49 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "migrateh": "heroku run knex migrate:latest -a secret-recipes-cookbook",
+    "rollbackh": "heroku run knex migrate:rollback -a secret-recipes-cookbook",
+    "databaseh": "heroku pg:psql -a secret-recipes-cookbook",
+    "seedh": "heroku run knex seed:run -a secret-recipes-cookbook",
+    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
+    "deploy": "git push heroku main"
+  },
+  "engines": {
+    "node": "16.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Build-Weel-Cookbook-Recipes/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Build-Weel-Cookbook-Recipes/backend/issues"
+  },
+  "homepage": "https://github.com/Build-Weel-Cookbook-Recipes/backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.3",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "sqlite3": "^5.0.2",
+    "vscode-sqlite3": "^4.0.11"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
