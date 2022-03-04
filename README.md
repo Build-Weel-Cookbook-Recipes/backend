@@ -3,14 +3,14 @@ Secret Family Recipe Cookbook - Backend
 
 Section Contents:
 
-/auth/login POST
-/auth/register POST
-/recipes GET
-/recipes POST
-/recipes/:id GET
-/recipes/:id PUT
-/recipes/:id DELETE
-/auth/login POST
+auth/login POST
+auth/register POST
+recipes GET
+recipes POST
+recipes/:id GET
+recipes/:id PUT
+recipes/:id DELETE
+auth/login POST
 Expects an object with this format as the request body:
 
 {
@@ -51,7 +51,7 @@ Requires an authorization header with a JWT. it will return an array of objects 
                 "sandwich"
             ]
         }
-/recipes POST
+recipes POST
 Requires an authorization header with a JWT. Expects an object with this format as the request body:
 
     {
@@ -70,7 +70,7 @@ Requires an authorization header with a JWT. Expects an object with this format 
             "seafood"
         ]
     }
-/recipes/:id GET
+recipes/:id GET
 Requires an authorization header with a JWT. The object represents the recipe with the ID specified in the path:
 
   "recipe": {
@@ -91,7 +91,7 @@ Requires an authorization header with a JWT. The object represents the recipe wi
             "seafood"
         ]
     }
-/recipes/:id PUT
+recipes/:id PUT
 Requires an authorization header with a JWT. Expects an object with this format as the request body:
 
     {
@@ -110,5 +110,5 @@ Requires an authorization header with a JWT. Expects an object with this format 
             "seafood"
         ]
     }
-/recipes/:id DELETE
+recipes/:id DELETE
 Requires an authorization header with a JWT. Deletes the selected recipe if it exists and is associated with the current user.
